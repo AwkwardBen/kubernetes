@@ -3837,6 +3837,8 @@ func (c *runtimeServiceClient) Version(ctx context.Context, in *VersionRequest, 
 
 func (c *runtimeServiceClient) RunPodSandbox(ctx context.Context, in *RunPodSandboxRequest, opts ...grpc.CallOption) (*RunPodSandboxResponse, error) {
 	out := new(RunPodSandboxResponse)
+	fmt.Print("output test")
+	fmt.Printf("%+v\n",opts)
 	err := grpc.Invoke(ctx, "/runtime.v1alpha2.RuntimeService/RunPodSandbox", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
