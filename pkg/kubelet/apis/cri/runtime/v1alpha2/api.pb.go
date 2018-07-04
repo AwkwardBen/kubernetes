@@ -3841,6 +3841,7 @@ func (c *runtimeServiceClient) RunPodSandbox(ctx context.Context, in *RunPodSand
 	fmt.Printf("%+v\n",opts)
 	fmt.Printf("%+v\n",in)
 	fmt.Printf("%+v\n",ctx)
+	fmt.Printf("%+v\n",c.cc)
 	err := grpc.Invoke(ctx, "/runtime.v1alpha2.RuntimeService/RunPodSandbox", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
